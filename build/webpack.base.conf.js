@@ -19,9 +19,7 @@ module.exports = {
       'src': path.resolve(__dirname, '../src'),
       'assets': path.resolve(__dirname, '../src/assets'),
       'components': path.resolve(__dirname, '../src/components'),
-      'common-components': path.resolve(__dirname,'../src/components/common'),
-      'vux-components': path.resolve(__dirname,'../src/components/vuxComponents')
-    }
+      'common-components': path.resolve(__dirname,'../src/components/common')    }
   },
   resolveLoader: {
     fallback: [path.join(__dirname, '../node_modules')]
@@ -47,7 +45,7 @@ module.exports = {
         loader: 'vue-html'
       },
       {
-        test: '/vux.src.*?js$/',
+        test: /vux.src.*?js$/,
         loader: 'babel'
       },
       {
