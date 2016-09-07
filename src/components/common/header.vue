@@ -1,9 +1,9 @@
 <template>
-	<div>
-		<x-header :style="headerfixed" :left-options="leftOptions" :right-options="rightOptions">
+	<section>
+		<x-header :style="headerfixed" :left-options.sync="leftOptions" :right-options.sync="rightOptions">
 			{{pageTitle}}
 		</x-header>
-	</div>
+	</section>
 </template>
 
 <script>
@@ -12,13 +12,14 @@
 	export default {
 		data(){
 			return {
-				pageTitle: 'PAGE TITLE'
+				
 			}
 		},
+		props: ['pageTitle','showBack','showMore'],
 		computed: {
 			headerfixed(){
 				return {
-					position: 'absolute',
+					position: 'fixed',
 					top: 0,
 					left: 0,
 					right: 0
@@ -27,13 +28,13 @@
 			leftOptions(){
 				return {
 					preventGoBack: true,
-					showBack: true,
-					backText:'Back'
+					showBack: this.showBack,
+					backText: 'Back'
 				}
 			},
 			rightOptions(){
         return {
-          showMore: true
+          showMore: this.showMore
         }
 	    }
 		},

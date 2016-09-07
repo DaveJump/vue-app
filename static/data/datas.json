@@ -1,0 +1,193 @@
+{
+	"front_end": [
+		{
+			"src": "/static/front_end.png",
+			"title": "FrontEnd",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/front_end.png",
+			"title": "FrontEnd",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/front_end.png",
+			"title": "FrontEnd",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/front_end.png",
+			"title": "FrontEnd",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/front_end.png",
+			"title": "FrontEnd",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/front_end.png",
+			"title": "FrontEnd",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/front_end.png",
+			"title": "FrontEnd",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/front_end.png",
+			"title": "FrontEnd",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/front_end.png",
+			"title": "FrontEnd",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+	],
+
+	"back_end": [
+		{
+			"src": "/static/back_end.png",
+			"title": "BackEnd",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/back_end.png",
+			"title": "BackEnd",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/back_end.png",
+			"title": "BackEnd",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/back_end.png",
+			"title": "BackEnd",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/back_end.png",
+			"title": "BackEnd",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/back_end.png",
+			"title": "BackEnd",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/back_end.png",
+			"title": "BackEnd",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/back_end.png",
+			"title": "BackEnd",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/back_end.png",
+			"title": "BackEnd",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+	],
+
+	"design": [
+		{
+			"src": "/static/design.png",
+			"title": "Design",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/design.png",
+			"title": "Design",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/design.png",
+			"title": "Design",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/design.png",
+			"title": "Design",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/design.png",
+			"title": "Design",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/design.png",
+			"title": "Design",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/design.png",
+			"title": "Design",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/design.png",
+			"title": "Design",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/design.png",
+			"title": "Design",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+	],
+
+	"product": [
+		{
+			"src": "/static/product.png",
+			"title": "Product",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/product.png",
+			"title": "Product",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/product.png",
+			"title": "Product",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/product.png",
+			"title": "Product",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/product.png",
+			"title": "Product",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/product.png",
+			"title": "Product",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/product.png",
+			"title": "Product",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/product.png",
+			"title": "Product",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+		{
+			"src": "/static/product.png",
+			"title": "Product",
+			"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eaque quae ex, quod, at doloremque odit placeat nostrum quaerat omnis nisi numquam! Perspiciatis voluptatum alias deserunt temporibus, corporis fugiat sint."
+		},
+	]
+}

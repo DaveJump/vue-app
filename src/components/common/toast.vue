@@ -1,7 +1,7 @@
 <template>
-	<div>
+	<section>
 		<toast :show="showToast" :type="toastType" :time="toastTime">操作成功</toast>
-	</div>
+	</section>
 </template>
 
 <script>

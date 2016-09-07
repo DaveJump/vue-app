@@ -1,5 +1,7 @@
 <template>
-	<loading :show="show" :text="text1"></loading>
+	<section>
+		<loading :show="show" :text="loading"></loading>
+	</section>
 </template>
 
 <script>
@@ -8,7 +10,12 @@
 	export default{
 		data(){
 			return {
-				show: true
+				show: false
+			}
+		},
+		events: {
+			showLoading(show){
+				this.show = show;
 			}
 		},
 		components: { Loading }
