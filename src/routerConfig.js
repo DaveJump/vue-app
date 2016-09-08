@@ -1,7 +1,7 @@
 export default (router) => router.map({
 	'/index': {
 		name: 'index',
-		component: require('components/IndexView'),
+		component: require('views/Index'),
 		subRoutes: {
 			'/front_end': {
 				name: 'front_end',
@@ -23,6 +23,6 @@ export default (router) => router.map({
 	},
 	'/mine': {
 		name: 'mine',
-		component: require('components/MineView')
+		component: require('views/Mine')
 	}
 });

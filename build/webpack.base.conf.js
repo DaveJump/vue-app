@@ -19,7 +19,10 @@ module.exports = {
       'src': path.resolve(__dirname, '../src'),
       'assets': path.resolve(__dirname, '../src/assets'),
       'components': path.resolve(__dirname, '../src/components'),
-      'common-components': path.resolve(__dirname,'../src/components/common')    }
+      'common-components': path.resolve(__dirname,'../src/components/common'),
+      'views': path.resolve(__dirname,'../src/views'),
+      'my-vuex': path.resolve(__dirname,'../src/vuex')
+    }
   },
   resolveLoader: {
     fallback: [path.join(__dirname, '../node_modules')]

@@ -1,8 +1,11 @@
 import Vue from 'vue';
-import App from './App';
 import Router from 'vue-router';
 import RouterConfig from './routerConfig';
+import Resource from 'vue-resource';
+Vue.use(Resource);
 Vue.use(Router);
+
+import App from './App';
 
 const router = new Router();
 RouterConfig(router);

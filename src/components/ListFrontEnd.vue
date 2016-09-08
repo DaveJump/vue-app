@@ -4,11 +4,12 @@
 
 <script>
 	import { Panel } from 'vux/src/components';
+	import { getters } from 'my-vuex/getters';
 
 	export default {
-		data(){
-			return {
-				list: []
+		vuex: {
+			getters: {
+				list: getters.getFrontEndData
 			}
 		},
 		components: { Panel }

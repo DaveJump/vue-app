@@ -29,7 +29,7 @@
 							normal: false,
 							current: true
 						},
-						link: '/'
+						link: '/index/front_end'
 					},
 					{
 						iconName: 'icon-latest',
