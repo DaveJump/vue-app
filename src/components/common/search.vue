@@ -1,7 +1,7 @@
 <template>
-	<section>
+	<div>
 		<search :cancel-text="cancel"></search>
-	</section>
+	</div>
 </template>
 
 <script>

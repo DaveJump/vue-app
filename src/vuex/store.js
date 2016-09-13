@@ -3,33 +3,28 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 const state = {
-	list: [
-		{
-			type: 'front_end',
-			list: []
-		},
-		{
-			type: 'back_end',
-			list: []
-		},
-		{
-			type: 'design',
-			list: []
-		},
-		{
-			type: 'product',
-			list: []
-		}
-	]
+	searchKey: {
+		page : 1,
+		limit : 12,
+		tab : 'all'
+	},
+	artlist: []
 }
 
 const mutations = {
-	LOADLISTDATA(state,type,list){
-		state.list.forEach((li,idx) => {
-			if(li.type === type){
-				li.list = list[type];
-			}
-		});
+	LOADLISTDATA(state,list){
+		state.artlist = list;
+	},
+	LOADMOREARTLIST(state,list){
+		state.artlist = state.artlist.concat(list);
+	},
+	CHANGESEARCHKEY(state,reg,callback){
+		state.searchKey = reg;
+		callback && callback();
+	},
+	CHANGEPAGE(state,reg,callback){
+		state.searchKey = reg;
+		callback && callback();
 	}
 }
 

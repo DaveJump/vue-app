@@ -1,7 +1,7 @@
 <template>
-	<section>
-		<loading :show="show" :text="loading"></loading>
-	</section>
+	<div>
+		<loading :show="show" text="Loading"></loading>
+	</div>
 </template>
 
 <script>

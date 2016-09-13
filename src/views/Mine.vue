@@ -1,59 +1,61 @@
 <template>
-	<x-header :page-title.sync="headerTitle" :show-back.sync="showBack" :show-more.sync="showMore"></x-header>
+	<!-- <x-header :page-title.sync="headerTitle" :show-back.sync="showBack" :show-more.sync="showMore"></x-header> -->
+	<div>
+		<header class="mine-view-header">
+			<h3>我的</h3>
+		</header>
 
-	<section class="mine-view" :style="getViewportHeight">
-		<section class="account-view" :class="{'tap-active': isTap}" @touchstart="tapHighlight($event)" @touchend="tapHighlight($event)">
-			<div class="portrait-left">
-				<div class="portrait-box">
-					<img src="/static/portrait.jpg">
+		<section class="mine-view" :style="getViewportHeight">
+			<section class="account-view" :class="{'tap-active': isTap}" @touchstart="tapHighlight($event)" @touchend="tapHighlight($event)">
+				<div class="portrait-left">
+					<div class="portrait-box">
+						<img src="/static/portrait.jpg">
+					</div>
 				</div>
-			</div>
-			<div class="message-right">
-				<h4>Account Name</h4>
-				<small>Edit Account Informations</small>
-			</div>
+				<div class="message-right">
+					<h4>书香博雅</h4>
+					<small>查看和编辑个人信息</small>
+				</div>
+			</section>
+
+			<section class="cells-view">
+				<group>
+				  <cell title="我的信息" is-link>
+				  	<i slot="icon" class="iconfont cell-icon icon-message"></i>
+				  </cell>
+				</group>
+
+				<group>
+				  <cell title="设置" is-link>
+				  	<i slot="icon" class="iconfont cell-icon icon-setting"></i>
+				  </cell>
+				  <switch title="夜间模式" is-link>
+				  	<i slot="icon" class="iconfont cell-icon icon-light" style="font-size: 19px;"></i>
+				  </switch>
+				</group>
+
+				<group>
+				  <cell title="关于" is-link>
+				  	<i slot="icon" class="iconfont cell-icon icon-info"></i>
+				  </cell>
+				</group>
+
+				<div class="logout">
+					<x-button type="warn" style="font-size: 14px;border-radius: 3px;padding: 3px 0;">退出当前账号</x-button>
+				</div>
+			</section>
 		</section>
-
-		<section class="cells-view">
-			<group>
-			  <cell title="Message" is-link>
-			  	<i slot="icon" class="iconfont cell-icon icon-message"></i>
-			  </cell>
-			</group>
-
-			<group>
-			  <cell title="Setting" is-link>
-			  	<i slot="icon" class="iconfont cell-icon icon-setting"></i>
-			  </cell>
-			  <switch title="Night Mode" is-link>
-			  	<i slot="icon" class="iconfont cell-icon icon-light" style="font-size: 19px;"></i>
-			  </switch>
-			</group>
-
-			<group>
-			  <cell title="About" is-link>
-			  	<i slot="icon" class="iconfont cell-icon icon-info"></i>
-			  </cell>
-			</group>
-
-			<div class="logout">
-				<x-button type="warn" style="font-size: 16px;border-radius: 3px">logout</x-button>
-			</div>
-		</section>
-	</section>
+	</div>
 </template>
 
 <script>
-	import XHeader from 'common-components/header';
+	// import XHeader from 'common-components/header';
 	import { Group,Cell,Switch,XButton } from 'vux/src/components';
 
 	export default {
 		data(){
 			return {
-				hasLogin: false,
-				headerTitle: 'Mine',
-				showBack: false,
-				showMore: false,
+				hasLogin: true,
 				isTap: false
 			}
 		},
@@ -72,7 +74,7 @@
 				return false;
 			}
 		},
-		components: { XHeader,Group,Cell,Switch,XButton }
+		components: { Group,Cell,Switch,XButton }
 	}
 </script>
 
@@ -80,14 +82,15 @@
 	.weui_cells {
 		margin-top: 12px !important;
 	}
-	.weui_cell_bd,.weui_label{
-		font-size: 16px;
+	.weui_cell_bd,.weui_label,.weui_cell_bd > p{
+		font-size: 14px;
+		color: #555 !important;
 	}
 	.weui_label{
 		display: inline-block;
 		margin-left: -6px;
 	}
-	.vux-header{
+	/* .vux-header{
 		background: #fff !important;
 		// box-shadow: 0 0 3px rgba(0,0,0,.1);
 		h1{
@@ -97,12 +100,28 @@
 	}
 	.vux-header .vux-header-title, .vux-header h1{
 		color: #666 !important;
-	}
+		font: {
+			size: 14px !important;
+		}
+	} */
 
 
 	.mine-view{
 		background: #F3F3F3;
-		padding-top: 46px;
+		padding-top: 5px;
+	}
+
+	.mine-view-header{
+		background: #fff;
+		h3{
+			padding: 8px;
+			font: {
+				size: 16px;
+				weight: normal;
+			};
+			color: #555;
+			text-align: center;
+		}
 	}
 	
 	.account-view.tap-active{
@@ -158,7 +177,7 @@
 				float: left;
 
 				h4{
-					color: #666;
+					color: #555;
 					font: {
 						size: 16px;
 						weight: normal;

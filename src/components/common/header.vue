@@ -1,7 +1,7 @@
 <template>
 	<section>
 		<x-header :style="headerfixed" :left-options.sync="leftOptions" :right-options.sync="rightOptions">
-			{{pageTitle}}
+			{{headerTitle}}
 		</x-header>
 	</section>
 </template>
@@ -10,12 +10,7 @@
 	import { XHeader } from 'vux/src/components';
 
 	export default {
-		data(){
-			return {
-				
-			}
-		},
-		props: ['pageTitle','showBack','showMore'],
+		props: ['headerTitle','showBack','showMore'],
 		computed: {
 			headerfixed(){
 				return {

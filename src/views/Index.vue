@@ -10,17 +10,8 @@
 	      </div>
 	    </div>
 	    <tab :line-width=2 class="router-btn">
-	      <tab-item selected style="position: relative">
-	        <a v-link="{name: 'front_end'}">前端</a>
-	      </tab-item>
-	      <tab-item style="position: relative" @click="loadBackEndData">
-	        <a v-link="{name: 'back_end'}">后端</a>
-	      </tab-item>
-	      <tab-item style="position: relative">
-	        <a v-link="{name: 'design'}">设计</a>
-	      </tab-item>
-	      <tab-item style="position: relative">
-	        <a v-link="{name: 'product'}">产品</a>
+	      <tab-item v-for="topbar in topbarlist" :selected="topbar.selected" style="position: relative" @click="changeTopBar($index)">
+	        <a v-link="{name: topbar.linkname}">{{topbar.title}}</a>
 	      </tab-item>
 	    </tab>
 	  </section>
@@ -28,6 +19,9 @@
 	  <!-- <scroller :lock-x="true" :scrollbar-y="true" :use-pulldown="true" :use-pullup="true"> -->
 	    <div class="list-view">
 	      <router-view></router-view>
+        <div class="loadmore" v-el:loadmore @click="loadMore" v-show="hasMore">
+          <span>加载更多</span>
+        </div>
 	    </div>
 	  <!-- </scroller> -->
   </section>
@@ -36,32 +30,91 @@
 <script>
   import Search from 'common-components/search';
   import {Tab,TabItem} from 'vux/src/components';
+
   import { getters } from 'my-vuex/getters';
   import { actions } from 'my-vuex/actions';
 
   export default {
+    data(){
+      return {
+        currentIndex: 0,
+        currentPage: 1,
+        topbarlist: [
+          {title: '全部', type: 'all',selected: true},
+          {title: '精华', type: 'good'},
+          {title: '分享', type: 'share'},
+          {title: '问答', type: 'ask'},
+          {title: '招聘', type: 'job'}
+        ],
+        hasMore: false
+      }
+    },
     vuex: {
       getters: {
-        list: getters.getBackEndData
+        searchKey: getters.getSearchKey
       },
       actions: {
-        loadlistdata: actions.loadlistdata
+        changeSearchKey: actions.changeSearchKey,
+        changePage: actions.changePage,
+        updateArtList: actions.updateArtList,
+        loadMoreArtList: actions.loadMoreArtList
+      }
+    },
+    route: {
+      activate(transition){
+        this.$els.loadmore.style.display = 'block';
+        transition.next();
       }
     },
     methods: {
-      loadBackEndData(){
-        if(!this.list.length){
-          this.$dispatch('showLoading',true);
-          this.$http.get('/static/data/datas.json',{
-            headers: {
-              'X-Requested-With': 'XMLHttpRequest'
-            },
-            emulateJSON: true
-          }).then((response) => {
-            this.loadlistdata('back_end',response.data);
-            this.$dispatch('showLoading',false);
+      changeTopBar(index){
+        this.currentPage = 1;
+        this.currentIndex = index;
+
+        this.$dispatch('showLoading',true);
+        let tab = this.topbarlist[index].type;
+
+        this.changeSearchKey({
+          page: this.currentPage,
+          limit: 12,
+          tab: tab
+        },this.request.bind(this,this.currentIndex));
+      },
+      loadMore(){
+        this.$dispatch('showLoading',true);
+        this.currentPage ++;
+
+        this.changePage({
+          page: this.currentPage,
+          limit: 12,
+          tab: this.topbarlist[this.currentIndex].type
+        },this.request.bind(this,this.currentIndex));
+      },
+      request(index){
+        this.$http.get('https://cnodejs.org/api/v1/topics',{
+          headers: {
+            'X-Requested-With': 'XMLHttpRequest'
+          },
+          emulateJSON: true,
+          params: this.searchKey
+        }).then((response) => {
+          if(this.searchKey.page > 1){
+            this.loadMoreArtList(response.data['data']);
+          }else{
+            this.updateArtList(response.data['data']);
+          }
+          this.$route.router.go({path: '/index/'+ this.topbarlist[index].type +''});
+          this.$dispatch('showLoading',false);
+        },(response) => {
+          console.log('请求失败!');
+          this.$dispatch('showLoading',false);
+          this.$dispatch('setToastInfo',{
+            show: true,
+            text: '网络开小差啦!',
+            type: 'warn',
+            time: 2000
           });
-        }     
+        });
       }
     },
   	components: { Tab,TabItem,Search }
@@ -131,5 +184,14 @@
         font-size: 16px;
       }
     }
+  }
+  .loadmore{
+    padding: 20px 0;
+    font: {
+      weight: 500;
+      size: 14px;
+    };
+    color: #666;
+    text-align: center;
   }
 </style>

@@ -1,7 +1,7 @@
 <template>
-	<section>
-		<toast :show="showToast" :type="toastType" :time="toastTime">操作成功</toast>
-	</section>
+	<div>
+		<toast :show="toast.show" :type="toast.type" :time="toast.time">{{toast.text}}</toast>
+	</div>
 </template>
 
 <script>
@@ -10,22 +10,31 @@
 	export default{
 		data(){
 			return {
-				showToast: false,
-				toastType: 'success',
-				toastTime: 2000
+				toast: {
+					show: false,
+					text: '',
+					type: '',
+					time: 2000
+				}
 			}
 		},
 		events: {
-			showToast(show){
-				this.showToast = show;
-			},
-			toastChange(type){
-				this.toastType = type;
-			},
-			toastTime(time){
-				this.toastTime = time;
+			setToastInfo(info){
+				this.toast = info;
+				window.setTimeout(() => {
+					this.toast.show = false;
+				},this.toast.time);
 			}
 		},
 		components: { Toast }
 	}
 </script>
+
+<style lang="scss">
+	.weui_toast_content{
+		font:{
+			size: 14px;
+		};
+		margin-top: 5px;
+	}
+</style>
