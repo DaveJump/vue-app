@@ -5,10 +5,17 @@ Vue.use(Vuex);
 const state = {
 	searchKey: {
 		page : 1,
-		limit : 12,
+		limit : 20,
 		tab : 'all'
 	},
-	artlist: []
+	artlist: [],
+	showLoading: false,
+	toast: {
+		show: false,
+		text: '',
+		type: '',
+		time: 2000
+	}
 }
 
 const mutations = {
@@ -25,6 +32,12 @@ const mutations = {
 	CHANGEPAGE(state,reg,callback){
 		state.searchKey = reg;
 		callback && callback();
+	},
+	SHOWLOADING(state,show){
+		state.showLoading = show;
+	},
+	SETTOASTINFO(state,info){
+		state.toast = info;
 	}
 }
 

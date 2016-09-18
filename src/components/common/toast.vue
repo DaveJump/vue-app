@@ -1,29 +1,29 @@
 <template>
 	<div>
-		<toast :show="toast.show" :type="toast.type" :time="toast.time">{{toast.text}}</toast>
+		<toast :show="getToast.show" :type="getToast.type" :time="getToast.time">{{getToast.text}}</toast>
 	</div>
 </template>
 
 <script>
 	import { Toast } from 'vux/src/components';
+	import { getters } from 'my-vuex/getters';
+	import { actions } from 'my-vuex/actions';
 
 	export default{
-		data(){
-			return {
-				toast: {
-					show: false,
-					text: '',
-					type: '',
-					time: 2000
-				}
+		vuex: {
+			getters: {
+				toast: getters.toast
+			},
+			actions: {
+				setToastInfo: actions.setToastInfo
 			}
 		},
-		events: {
-			setToastInfo(info){
-				this.toast = info;
+		computed: {
+			getToast(){
 				window.setTimeout(() => {
-					this.toast.show = false;
+					this.setToastInfo({show: false});
 				},this.toast.time);
+				return this.toast;
 			}
 		},
 		components: { Toast }

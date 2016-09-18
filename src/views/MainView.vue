@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="main-view" transition="stretchOutLeft">
 		<router-view></router-view>
 		<tabbar></tabbar>
 	</div>
@@ -7,50 +7,53 @@
 
 <script>
 	import Tabbar from 'common-components/tabbar';
-
-  import { store } from 'my-vuex/store';
   import { actions } from 'my-vuex/actions';
   import { getters } from 'my-vuex/getters';
 
   export default {
     ready(){
-      this.getFirstDatas();
+      this.goIndex();
     },
-    store,
     vuex: {
       getters: {
         searchKey: getters.getSearchKey
       },
       actions: {
-        updateArtList: actions.updateArtList
+        updateArtList: actions.updateArtList,
+        showLoading: actions.showLoading,
+        setToastInfo: actions.setToastInfo
+      }
+    },
+    computed: {
+      getViewportHeight(){
+        return {
+          height: window.innerHeight + 'px'
+        }
       }
     },
     methods: {
-      getFirstDatas(){
-        let _this = this;
-        this.$dispatch('showLoading',true);
-        this.$http.get('https://cnodejs.org/api/v1/topics',{
-          headers: {
-            'X-Requested-With': 'XMLHttpRequest'
-          },
-          emulateJSON: true,
-          params: this.searchKey
-        }).then((response) => {
-          _this.$route.router.go({path: '/index/all'});
-          _this.$dispatch('showLoading',false);
-          _this.updateArtList(response.data['data']);
-        },(response) => {
-          console.log('请求失败!');
-          _this.$dispatch('showLoading',false);
-          _this.$dispatch('setToastInfo',{
-            show: true,
-            text: '网络开小差啦!',
-            type: 'warn',
-            time: 2000
-          });
-        });
+      goIndex(){
+        this.$route.router.go({path: '/index/all'});
       }
     },
     components: { Tabbar }
   }
 </script>
+
+<style lang="scss">
+	.main-view{
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+	}
+	.stretchOutLeft-transition{
+    transition: transform .5s ease-in-out;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  .stretchOutLeft-enter,
+  .stretchOutLeft-leave{
+    transform: translate3d(-50%,0,0);
+  }
+</style>

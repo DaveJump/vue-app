@@ -1,5 +1,5 @@
 <template>
-	<section class="index-view">
+	<section class="index-view" :style="getViewportHeight">
 	  <section class="sticky-top">
 	    <div class="top-tools">
 	      <div class="seach-box">
@@ -18,7 +18,7 @@
 
 	  <!-- <scroller :lock-x="true" :scrollbar-y="true" :use-pulldown="true" :use-pullup="true"> -->
 	    <div class="list-view">
-	      <router-view></router-view>
+	      <router-view keep-alive></router-view>
         <div class="loadmore" v-el:loadmore @click="loadMore" v-show="hasMore">
           <span>加载更多</span>
         </div>
@@ -35,6 +35,10 @@
   import { actions } from 'my-vuex/actions';
 
   export default {
+    ready(){
+      this.$els.loadmore.style.display = 'none';
+      this.changeTopBar(0);
+    },
     data(){
       return {
         currentIndex: 0,
@@ -57,7 +61,9 @@
         changeSearchKey: actions.changeSearchKey,
         changePage: actions.changePage,
         updateArtList: actions.updateArtList,
-        loadMoreArtList: actions.loadMoreArtList
+        loadMoreArtList: actions.loadMoreArtList,
+        showLoading: actions.showLoading,
+        setToastInfo: actions.setToastInfo
       }
     },
     route: {
@@ -66,14 +72,21 @@
         transition.next();
       }
     },
+    computed: {
+      getViewportHeight(){
+        return {
+          height: window.innerHeight + 'px'
+        }
+      }
+    },
     methods: {
       changeTopBar(index){
         this.currentPage = 1;
         this.currentIndex = index;
-
-        this.$dispatch('showLoading',true);
+        this.showLoading(true);
+        this.updateArtList([]);
+        this.$els.loadmore.style.display = 'none';
         let tab = this.topbarlist[index].type;
-
         this.changeSearchKey({
           page: this.currentPage,
           limit: 12,
@@ -81,9 +94,8 @@
         },this.request.bind(this,this.currentIndex));
       },
       loadMore(){
-        this.$dispatch('showLoading',true);
+        this.showLoading(true);
         this.currentPage ++;
-
         this.changePage({
           page: this.currentPage,
           limit: 12,
@@ -104,11 +116,12 @@
             this.updateArtList(response.data['data']);
           }
           this.$route.router.go({path: '/index/'+ this.topbarlist[index].type +''});
-          this.$dispatch('showLoading',false);
+          this.showLoading(false);
+          this.$els.loadmore.style.display = 'block';
         },(response) => {
           console.log('请求失败!');
-          this.$dispatch('showLoading',false);
-          this.$dispatch('setToastInfo',{
+          this.showLoading(false);
+          this.setToastInfo({
             show: true,
             text: '网络开小差啦!',
             type: 'warn',
@@ -130,7 +143,7 @@
   }
 
 	.sticky-top{
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -151,11 +164,15 @@
       color: #04C002;
     }
   }
-  .index-view{
-    // display: none;
-  }
   .list-view{
-    padding: 88px 0 55px 0;
+    position: absolute;
+    top: 88px;
+    left: 0;
+    right: 0;
+    bottom: 55px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
   }
   .top-tools{
     background: #fff;
@@ -186,7 +203,7 @@
     }
   }
   .loadmore{
-    padding: 20px 0;
+    padding: 15px 0;
     font: {
       weight: 500;
       size: 14px;

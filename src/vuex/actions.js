@@ -10,5 +10,11 @@ export const actions = {
 	},
 	changePage({dispatch},reg,callback){
 		dispatch('CHANGEPAGE',reg,callback);
+	},
+	showLoading({dispatch},show){
+		dispatch('SHOWLOADING',show);
+	},
+	setToastInfo({dispatch},info){
+		dispatch('SETTOASTINFO',info);
 	}
 }

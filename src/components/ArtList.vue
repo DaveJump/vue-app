@@ -9,7 +9,7 @@
 					<span class="art-info">
 						<h4>{{art.title}}</h4>
 						<small>{{art.reply_count}}/{{art.visit_count}}</small>&nbsp;&nbsp;
-          	<small>{{art.create_at | getDateTime art.create_at}}</small>
+          	<small>{{art.create_at | getDateTime}}</small>
 					</span>
 				</a>
 			</li>

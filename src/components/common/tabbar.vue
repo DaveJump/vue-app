@@ -1,6 +1,6 @@
 <template>
 	<section class="tabbar-section">
-	  <tabbar :style="tabbarStyle">
+	  <tabbar>
 	    <tabbar-item v-for="baritem in baritems" @click="changeCurrent($index)" :link="baritem.link">
 	      <i slot="icon" class="iconfont" :class="baritem.iconName" :style="baritem.style" v-show="baritem.status.normal"></i>
 	      <i slot="icon" class="iconfont" :class="baritem.iconName" style="color: #09BB07" :style="baritem.style" v-show="baritem.status.current"></i>
@@ -73,18 +73,6 @@
 				]
 			}
 		},
-		computed: {
-			tabbarStyle(){
-				return {
-					position: 'fixed',
-					bottom: 0,
-					left: 0,
-					right: 0,
-					zIndex: 9999,
-					background: '#fff'
-				}
-			}
-		},
 		methods: {
 			changeCurrent(index){
 				this.baritems.forEach((each,idx) => {
@@ -103,6 +91,15 @@
 </script>
 
 <style>
+	.tabbar-section{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 9999;
+		height: 54px;
+		background: #fff;
+	}
 	.current-bar-label{
 		color: #09BB07;
 	}

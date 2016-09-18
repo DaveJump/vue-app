@@ -6,16 +6,12 @@
 
 <script>
 	import { Loading } from 'vux/src/components';
+	import { getters } from 'my-vuex/getters';
 
 	export default{
-		data(){
-			return {
-				show: false
-			}
-		},
-		events: {
-			showLoading(show){
-				this.show = show;
+		vuex: {
+			getters: {
+				show: getters.showLoading
 			}
 		},
 		components: { Loading }

@@ -4,5 +4,11 @@ export const getters = {
 	},
 	getArtList(state){
 		return state.artlist;
+	},
+	showLoading(state){
+		return state.showLoading;
+	},
+	showToast(state){
+		return state.toast;
 	}
 }

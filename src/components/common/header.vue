@@ -14,7 +14,7 @@
 		computed: {
 			headerfixed(){
 				return {
-					position: 'fixed',
+					position: 'absolute',
 					top: 0,
 					left: 0,
 					right: 0
@@ -22,9 +22,9 @@
 			},
 			leftOptions(){
 				return {
-					preventGoBack: true,
+					preventGoBack: false,
 					showBack: this.showBack,
-					backText: 'Back'
+					backText: ''
 				}
 			},
 			rightOptions(){
